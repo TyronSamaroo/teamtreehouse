@@ -106,10 +106,10 @@ if ( userPrompt.toUpperCase()  === answer_five) {
 if (correctAnswers == 5){
   playerRanking = "Gold";
 }
-else if (2 < correctAnswers  <= 4){
+else if (correctAnswers  >= 3){
   playerRanking = "Silver";
 }
-else if ( 0 < correctAnswers <= 2) {
+else if (correctAnswers >= 1) {
   playerRanking = "Bronze"
 } else {
   playerRanking = "No crown"
