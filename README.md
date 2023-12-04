@@ -18,13 +18,16 @@ Provide a brief description of your project here.
 ```
 .
 ├── JavaScriptBasics
-│   └── ConditionalChallenge
+│   ├── ConditionalChallenge
+│   │   ├── css
+│   │   ├── index.html
+│   │   └── js
+│   └── JavaScriptNumbers
 │       ├── css
-│       │   └── style.css
 │       ├── index.html
 │       └── js
-│           └── quiz.js
 └── README.md
+8 directories, 3 files
 ```
 
 
