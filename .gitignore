@@ -1,0 +1,9 @@
+# Ignore Visual Studio Code files
+.vscode/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore JavaScript-related files
+node_modules/
+*.log
