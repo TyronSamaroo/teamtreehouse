@@ -17,7 +17,7 @@ let html = '';
  */
 for( let i = 1; i <= 10; i++ ){
     const randomRGB = getRandomColor();
-    html += `<dibe style="background-color: ${randomRGB}">${i}</div>`;
+    html += `<div style="background-color: ${randomRGB}">${i}</div>`;
 }
 
 // Set the innerHTML of the main element to the generated HTML string
