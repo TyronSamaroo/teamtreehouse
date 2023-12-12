@@ -15,7 +15,7 @@ let html = '';
 /**
  * Loop from 1 to 10 to generate div elements with random background colors.
  */
-for( let i = 1; i <= 10; i++ ){
+for( let i = 2; i <= 100; i+=2 ){
     const randomRGB = getRandomColor();
     html += `<div style="background-color: ${randomRGB}">${i}</div>`;
 }
