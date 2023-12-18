@@ -65,11 +65,13 @@ I
 */
 function createCard ( pet ){
   return `
-  <h1> ${pet.name} </h1>
-  <p>${pet.type}</p>
-  <p>${pet.breed}</p>
-  <p>${pet.age}</p>
+  <div>
+  <p class="name"> ${pet.name} </p>
   <img src=${pet.photo} >
+  <p>Type: ${pet.type}</p>
+  <p>Breed: ${pet.breed}</p>
+  <p>Age: ${pet.age}</p>
+  </div>
   `
 }
 
@@ -82,4 +84,5 @@ for ( let i = 0; i < pets.length; i++ ){
 
 }
 console.log(cardsHTML)
-document.querySelector('main').innerHTML = cardsHTML;
+let mainElement = document.querySelector('main');
+mainElement.insertAdjacentHTML('beforeend', cardsHTML);
