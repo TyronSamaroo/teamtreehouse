@@ -65,7 +65,7 @@ I
 */
 function createCard ( pet ){
   return `
-  <div>
+  <div class="card">
   <p class="name"> ${pet.name} </p>
   <img src=${pet.photo} >
   <p>Type: ${pet.type}</p>
