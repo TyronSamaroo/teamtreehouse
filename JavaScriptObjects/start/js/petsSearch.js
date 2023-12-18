@@ -48,55 +48,65 @@ const pets = [
       'photo': 'img/tabby.jpg'
     },
   ];
+
+  // Function to display all pets
+function displayAllPets() {
+    clearGallery();
   
-  // Loop through the array and create HTML for each object
-  // document.getElementById('search').addEventListener('input', function(e) {
-  //   let searchTerm = e.target.value.toLowerCase(); // Convert search term to lowercase
-  //   let filteredPets = pets.filter(pet => pet.type.toLowerCase().includes(searchTerm)); // Convert pet type to lowercase
-    
-  //   document.getElementById('pet-gallery').innerHTML = ''; // Clear the gallery
-    
-  //   for (let i = 0; i < filteredPets.length; i++){
-  //     let pet = filteredPets[i];
-  //     let card = `<div class="card">
-  //     <p class="name">${pet.name}</p>
-  //     <img src="${pet.photo}" alt="${pet.breed}">
-  //     <p><strong>Age:</strong> ${pet.age}</p>
-  //     <p><strong>Type:</strong> ${pet.type}</p>
-  //     <p><strong>Breed:</strong> ${pet.breed}</p>
-  //   </div>`
-  //     document.querySelector('#pet-gallery').insertAdjacentHTML('beforeend', card);
-  //   }
-  // });
+    for (let i = 0; i < pets.length; i++) {
+      let pet = pets[i];
+      let card = createCard(pet);
+      addCardToGallery(card);
+    }
+  }
   
+  function showSpinner() {
+    document.getElementById('spinner').style.display = 'block';
+  }
   
+  function hideSpinner() {
+    document.getElementById('spinner').style.display = 'none';
+  }
+  
+  function filterPets(searchTerm) {
+    return pets.filter(pet => pet.type.toLowerCase().includes(searchTerm));
+  }
+  
+  function clearGallery() {
+    document.getElementById('pet-gallery').innerHTML = '';
+  }
+  
+  function createCard(pet) {
+    return `<div class="card">
+      <p class="name">${pet.name}</p>
+      <img src="${pet.photo}" alt="${pet.breed}">
+      <p><strong>Age:</strong> ${pet.age}</p>
+      <p><strong>Type:</strong> ${pet.type}</p>
+      <p><strong>Breed:</strong> ${pet.breed}</p>
+    </div>`;
+  }
+  
+  function addCardToGallery(card) {
+    document.querySelector('#pet-gallery').insertAdjacentHTML('beforeend', card);
+  }
+  
+  // Call the function when the page loads
+  displayAllPets();
   document.getElementById('search').addEventListener('input', function(e) {
-    console.log('Input event triggered'); // Check if the event is triggered
-    document.getElementById('spinner').style.display = 'block'; // Show the spinner
+    showSpinner();
   
     setTimeout(function() {
-      let searchTerm = e.target.value.toLowerCase(); // Convert search term to lowercase
-      console.log('Search term:', searchTerm); // Check the search term
-      let filteredPets = pets.filter(pet => pet.type.toLowerCase().includes(searchTerm)); // Convert pet type to lowercase
-      console.log('Filtered pets:', filteredPets); // Check the filtered pets
+      let searchTerm = e.target.value.toLowerCase();
+      let filteredPets = filterPets(searchTerm);
       
-      document.getElementById('pet-gallery').innerHTML = ''; // Clear the gallery
+      clearGallery();
       
       for (let i = 0; i < filteredPets.length; i++){
         let pet = filteredPets[i];
-        console.log('Processing pet:', pet); // Check each pet
-        let card = `<div class="card">
-        <p class="name">${pet.name}</p>
-        <img src="${pet.photo}" alt="${pet.breed}">
-        <p><strong>Age:</strong> ${pet.age}</p>
-        <p><strong>Type:</strong> ${pet.type}</p>
-        <p><strong>Breed:</strong> ${pet.breed}</p>
-      </div>`
-        document.querySelector('#pet-gallery').insertAdjacentHTML('beforeend', card);
+        let card = createCard(pet);
+        addCardToGallery(card);
       }
   
-      document.getElementById('spinner').style.display = 'none'; // Hide the spinner when done
-    }, 2000); // Delay of 2 seconds
+      hideSpinner();
+    }, 2000);
   });
-
-
