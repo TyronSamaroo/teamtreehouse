@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #f8f8ff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2em 3em;
+  font-family: serif;
+  color: #8d9aa5;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  color: #384047;
+}
+
+h1 {
+  font-size: 60px;
+  padding: 0.55em 0;
+  margin: 0 0 0.65em;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 42px;  
+  margin: 0;
+}
+
+h2:not(:first-of-type ) {
+  border-top: solid 1px rgba(0, 0, 0, 0.15);
+  padding-top: 34px;
+}
+
+h3 {
+  color: #5f6a74;
+  font-size: 24px;
+  margin: 0 0 0.25em;
+}
+
+p {
+  font-size: 1.15em;
+  margin: 0.5em 0 1em;
+}
+
+img {
+  max-width:100%;
+  margin: 0 0 46px;
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 700px) {
+  img {
+    width: 500px;
+  }
+}
+
+.card {
+  border: 1px solid #e0e0e0; /* softer color for the border */
+  margin: 10px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease; /* transition for the hover effect */
+  
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(196, 0, 0, 0.92); /* hover effect */
+}
+
+.card img {
+  margin-bottom: 10px; /* space between the image and the text */
+  padding: 5px; /* padding around the image */
+  border-radius: 5px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#pet-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+#search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+#search:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#spinner {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+nav {
+  overflow: hidden;
+}
+
+/* Style the navigation links */
+nav li {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+nav li:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+#search {
+  font-size: 1.5em; /* Increase font size */
+  width: 100%; /* Make it full width */
+  padding: 10px; /* Add some padding */
+  margin-bottom: 20px; /* Add some space below the input */
+}
+
+#pet-select {
+  font-size: 1.2em;
+  padding: 10px;
+  margin-bottom: 20px;
+}
