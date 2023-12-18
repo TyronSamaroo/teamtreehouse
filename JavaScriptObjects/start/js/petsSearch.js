@@ -59,6 +59,18 @@ function displayAllPets() {
       addCardToGallery(card);
     }
   }
+
+function displayPets(petType) {
+clearGallery();
+
+let filteredPets = pets.filter(pet => pet.type.toLowerCase() === petType.toLowerCase());
+
+for (let i = 0; i < filteredPets.length; i++) {
+    let pet = filteredPets[i];
+    let card = createCard(pet);
+    addCardToGallery(card);
+}
+}
   
   function showSpinner() {
     document.getElementById('spinner').style.display = 'block';
@@ -108,5 +120,17 @@ function displayAllPets() {
       }
   
       hideSpinner();
-    }, 2000);
+    }, 500);
   });
+
+
+  document.getElementById('show-all').addEventListener('click', displayAllPets);
+  
+  document.getElementById('show-cats').addEventListener('click', function() {
+    displayPets('Cat');
+  });
+  
+  document.getElementById('show-dogs').addEventListener('click', function() {
+    displayPets('Dog');
+  });
+  
