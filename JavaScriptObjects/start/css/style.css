@@ -1,179 +1,107 @@
 /* General Styles */
 * {
-  box-sizing: border-box;
-}
-
+    box-sizing: border-box;
+  }
+  
 body {
-  background: #f8f8ff;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 2em 3em;
-  font-family: serif;
-  color: #8d9aa5;
+    background: #f8f8ff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2em 3em;
+    font-family: serif;
+    color: #8d9aa5;
 }
 
 /* Typography */
 h1, h2, h3 {
-  font-weight: 500;
-  color: #384047;
+    font-weight: 500;
+    color: #384047;
 }
 
 h1 {
-  font-size: 60px;
-  padding: 0.55em 0;
-  margin: 0 0 0.65em;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
-}
-
-h2 {
-  font-size: 42px;  
-  margin: 0;
-}
-
-h2:not(:first-of-type) {
-  border-top: solid 1px rgba(0, 0, 0, 0.15);
-  padding-top: 34px;
-}
-
-h3 {
-  color: #5f6a74;
-  font-size: 24px;
-  margin: 0 0 0.25em;
+    font-size: 60px;
+    padding: 0.55em 0;
+    margin: 0 0 0.65em;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.15);
 }
 
 p {
-  font-size: 1.15em;
-  margin: 0.5em 0 1em;
+    font-size: 1.15em;
+    margin: 0.5em 0 1em;
 }
 
 /* Image Styles */
 img {
-  max-width: 100%;
-  margin: 0 0 46px;
-  border-radius: 5px;
-  border: solid 1px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 0 46px;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 700px) {
-  img {
-    width: 500px;
-  }
+    img {
+        width: 500px;
+    }
 }
 
 /* Card Styles */
 .card {
-  border: 1px solid #e0e0e0;
-  margin: 10px;
-  padding: 10px;
-  transition: box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    margin: 10px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 0 10px rgba(196, 0, 0, 0.92);
+    box-shadow: 0 0 10px rgba(196, 0, 0, 0.92);
 }
 
 .card img {
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .name {
-  font-size: 20px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Grid Layout for Gallery */
 #pet-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-/* Search Box Styles */
-#search {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  font-size: 1.5em;
-  color: rgb(255, 255, 255);
-  background-color: lightgray;
-}
-
-#search:focus {
-  outline: none;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-#pet-select {
-  font-size: 1.2em;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-/* Button Styles */
-.btn {
-  font-size: 1em;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.btn:active {
-  background-color: #003d80;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
 }
 
 /* Main Layout */
 main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-/* Card Layout Adjustments */
-.card {
-  flex-basis: calc(33.33% - 20px); /* three cards per row, accounting for margin */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 /* Navigation Styles */
 nav {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 nav li {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 nav li:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
 
-/* Spinner Animation */
-#spinner {
-  display: none;
-  width: 50px;
-  height: 50px;
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
-  border-radius: 
+/* Card Layout Adjustments */
+.card {
+    flex-basis: calc(33.33% - 20px); /* three cards per row, accounting for margin */
 }
